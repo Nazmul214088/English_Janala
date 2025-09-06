@@ -58,7 +58,7 @@ const ShowCard = (cardData) => {
         for(let card of cardData){
             const divCard = document.createElement('div');
             divCard.innerHTML = `
-            <div class="bg-[#fff] p-14 text-center h-[100%] round">
+            <div class="boxShadow bg-[#fff] p-14 text-center h-[100%] round">
                 <h1 id="card${card.id}" class=" text-2xl font-bold inter word">${card.word}</h1>
                 <p class="inter text-[1.2rem] font-medium p-6">Meaning /Pronunciation</p>
                 <h1 class="bangla_font font-semibold text-3xl mb-14 text-[#18181B]">"${card.meaning} / ${card.pronunciation}"</h1>

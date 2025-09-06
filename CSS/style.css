@@ -23,7 +23,11 @@
 .hidden_data{
     display: none;
 }
-.shadow{
-    box-shadow: 0 0 0 10px #3030c7;
-    background-color: #3030c7;
+.boxShadow{
+    box-shadow: 0 0 10px #3030c7;
+}
+@media screen and (max-width: 640px) {
+    #wordContainer{
+        grid-template-columns: 1;
+    }
 }
