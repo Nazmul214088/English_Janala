@@ -26,8 +26,9 @@
 .boxShadow{
     box-shadow: 0 0 10px #3030c7;
 }
-@media screen and (max-width: 640px) {
+/* @media screen and (max-width: 640px) {
     #wordContainer{
-        grid-template-columns: 1;
+        grid-template-columns: 1fr;
+        width: 96%;
     }
-}
+} */
