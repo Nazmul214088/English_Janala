@@ -1,0 +1,29 @@
+*{
+    font-family: "Poppins", sans-serif;;
+}
+
+.bangla_font {
+    font-family: "Hind Siliguri", sans-serif;
+}
+
+.inter{
+    font-family: "Inter", sans-serif;
+}
+.colspan{
+    grid-column: span 3;
+}
+.round{
+    border-radius: 10px;
+    
+}
+.active{
+    background-color: #3030c7;
+    color: #fff;
+}
+.hidden_data{
+    display: none;
+}
+.shadow{
+    box-shadow: 0 0 0 10px #3030c7;
+    background-color: #3030c7;
+}

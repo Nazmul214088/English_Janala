@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Janala Project</title>
+    
+    <!-- Favicon link  -->
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+    <!-- google font link  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- link for font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind and Daisy UI link  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Main CSS link  -->
+     <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+    <header>
+        <nav class="shadow-sm bg-[#4f34ff33]">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+                    </div>
+                    <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        <li><a  class=" btn-soft btn-primary border-blue-600 p-6 text-2xl"><i class="fa-solid fa-circle-question"></i>FAQ</a></li>
+                    <li><a  class=" btn-soft btn-primary border-blue-600 p-6 text-2xl"><i class="fa-solid fa-book-open"></i>Learn</a></li>
+                    <li><a  class=" btn-soft btn-primary border-blue-600 p-6 text-2xl"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="justify-between navbar-center hidden lg:flex navbar ">
+                <div class="flex items-center text-2xl">
+                    <h1 class=" font-semibold">English</h1>
+                    <img src="./assets/logo.png" alt="">
+                    <h1 class="bangla_font">জানালা</h1>
+                </div>
+                <ul class="menu menu-horizontal gap-4 px-1">
+                    <li><a  class="btn btn-soft btn-primary border-blue-600 p-6 text-xl"><i class="fa-solid fa-circle-question"></i>FAQ</a></li>
+                    <li><a  class="btn btn-soft btn-primary border-blue-600 p-6 text-xl"><i class="fa-solid fa-book-open"></i>Learn</a></li>
+                    <li><a  class="btn btn-soft btn-primary border-blue-600 p-6 text-xl"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section class="flex justify-between items-center px-20 flex-col-reverse md:flex-row">
+            <div class=" flex-1">
+                <h1 class=" text-[3rem] font-bold"><span class="text-[#00BCFF]">English</span> is Easy!!</h1>
+                <p class="bangla_font text-[1.5rem] text-[#18181B]">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
+                <form class=" mt-9">
+                    <input type="text" class="input mb-5" placeholder="Enter Your Name"><br>
+                    <input type="password" class="input mb-5" placeholder="Enter your Password"><br>
+                    <button class="btn btn-primary">Get Started</button>
+                </form>
+            </div>
+            <div class=" flex-1">
+                <img src="./assets/hero-student.png" alt="">
+            </div>
+        </section>
+    </header>
+    <main>
+        <section class=" mt-32 text-center">
+            <h1 class=" text-[2.25rem] font-bold mb-8"><span class="text-[#00BCFF]">Les's</span> Learn Vocabularies</h1>
+            <div class=" flex gap-3 flex-wrap justify-center" id="lessonContainer">
+            </div>
+        </section>
+        <!-- Spinner section start -->
+        <section id="spinnerContainer" class="flex justify-center items-center py-3 mt-3 hidden">
+            <span class="loading loading-bars loading-xl"></span>
+        </section>
+        <!-- Word container section start -->
+        <section id="wordContainer" class=" grid grid-cols-3 gap-7 bg-[#F8F8F8] text-center text-[0.8rem] text-[#79716B] bangla_font py-16 mt-5">
+            <div class=" col-span-3">
+                <p>আপনি এখনো কোন Lesson Select করেন ন</p>
+                <h1 class="bangla_font font-medium text-[2.12rem] text-[#292524] gri">একটি Lesson Select করুন।</h1>
+            </div>
+        </section>
+        <!-- Frequently Asked questions section start  -->
+        <section class=" mt-40 mb-16">
+            <h1 class="text-[#18181B] mb-14 text-center text-[2.25rem] font-bold"><span class="text-[#00BCFF]">Frequently</span> Asked Questions</h1>
+
+            <div class="ml-6">
+                <div class="bg-[#8484e028] rounded-2xl mb-4">
+                    <div class="flex justify-between items-center mb-3 px-4">
+                        <h3 class=" font-medium text-[#18181B] text-[1rem] py-4">1. How can I start learning English on this website?</h3>
+                        <div class="plusMinusContainer" id="plusMinusContainer_1">
+                            <div class="" id="Plus_1">
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                            <div id="Minus_1" class="hidden_data">
+                                <i class="fa-solid fa-minus"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p id="ans_1" class="ans hidden_data mt-[-18px] pl-4 pb-9 text-[#62748E] text-[1rem]">You can start by exploring our beginner lessons, interactive exercises, and quizzes. We also offer structured courses to guide you step by step.</p>
+                </div>
+
+                <div class="bg-[#8484e028] rounded-2xl mb-4">
+                    <div class="flex justify-between items-center mb-3 px-4">
+                        <h3 class=" font-medium text-[#18181B] text-[1rem] py-4">Is this website free to use?</h3>
+                        <div class="plusMinusContainer" id="plusMinusContainer_2">
+                            <div class="" id="Plus_2">
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                            <div id="Minus_2" class="hidden_data">
+                                <i class="fa-solid fa-minus"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p id="ans_2" class="ans hidden_data mt-[-18px] pl-4 pb-9 text-[#62748E] text-[1rem]">It is free to use with limited features, but some advanced features require payment.</p>
+                </div>
+
+                <div class="bg-[#8484e028] rounded-2xl mb-4">
+                    <div class="flex justify-between items-center mb-3 px-4">
+                        <h3 class=" font-medium text-[#18181B] text-[1rem] py-4">3. Do I need to create an account?</h3>
+                        <div class="plusMinusContainer" id="plusMinusContainer_3">
+                            <div class="" id="Plus_3">
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                            <div id="Minus_3" class="hidden_data">
+                                <i class="fa-solid fa-minus"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p id="ans_3" class="ans hidden_data mt-[-18px] pl-4 pb-9 text-[#62748E] text-[1rem]">3. You need to create an account to use this website.</p>
+                </div>
+
+                <div class="bg-[#8484e028] rounded-2xl mb-4">
+                    <div class="flex justify-between items-center mb-3 px-4">
+                        <h3 class=" font-medium text-[#18181B] text-[1rem] py-4">4. How can I build my English vocabulary?</h3>
+                        <div class="plusMinusContainer" id="plusMinusContainer_4">
+                            <div class="" id="Plus_4">
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                            <div id="Minus_4" class="hidden_data">
+                                <i class="fa-solid fa-minus"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p id="ans_4" class="ans hidden_data mt-[-18px] pl-4 pb-9 text-[#62748E] text-[1rem]">Read, listen, and practice using new words daily in context to steadily build your English vocabulary.</p>
+                </div>
+
+                <div class="bg-[#8484e028] rounded-2xl mb-4">
+                    <div class="flex justify-between items-center mb-3 px-4">
+                        <h3 class=" font-medium text-[#18181B] text-[1rem] py-4">5. Do you offer certificates for completed courses?</h3>
+                        <div class="plusMinusContainer" id="plusMinusContainer_5">
+                            <div class="" id="Plus_5">
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                            <div id="Minus_5" class="hidden_data">
+                                <i class="fa-solid fa-minus"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p id="ans_5" class="ans hidden_data mt-[-18px] pl-4 pb-9 text-[#62748E] text-[1rem]">I don’t provide certificates for completed courses.</p>
+                </div>
+
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="flex justify-between items-center py-24 px-10 bg-[#EDF6FF]">
+        <div>
+            <div class="flex items-center mb-5">
+                <h1 class=" font-semibold text-[#18181B] text-[20px]">English</h1>
+                <img src="./assets/logo.png" alt="">
+                <h1 class="bangla_font text-[20px]">জানালা</h1>
+            </div>
+            <h2 class="bangla_font font-medium text-[#546A7F] text-[1.25rem] mb-2">ইংরেজি শিখুন সহজে</h2>
+            <p class="text-[1rem] bangla_font text-[#546A7F]">Providing ED-Tech Applications since 2025</p>
+        </div>
+
+        <div>
+            <h2 class=" font-semibold text-[14px] text-[#18181B]">FOLLOW US</h2>
+            <div>
+                <ul class="flex gap-3">
+                    <li><a href="" class=" text-[28px]"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="" class=" text-[28px]"><i class="fa-brands fa-youtube"></i></a></li>
+                    <li><a href="" class=" text-[28px]"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="" class=" text-[28px]"><i class="fa-brands fa-github"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Open the modal using ID.showModal() method -->
+    <dialog id="my_modal_1" class="modal">
+        <div class="modal-box">
+            <div id="wordDetailContainer">
+
+            </div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn btn-primary">Complete Learning</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="./JS/script.js"></script>
+</body>
+</html>
